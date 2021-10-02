@@ -26,9 +26,8 @@ public class File_Read_Write_Delete {
 				System.out.println(ref3.nextLine());
 				System.exit(0);
 			}
-			//FileOutputStrem
-			
-			//ref1.delete();
+				
+			ref1.delete();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
