@@ -1,0 +1,736 @@
+1. Write a Program to Test the Prime number ?
+
+
+<------------------------------------------------->
+
+package com.assignment.questions;
+
+
+import java.util.Scanner;
+
+
+	
+public class PrimeNumOrNot {
+
+
+	public static void main(String[] args) {
+
+		Scanner ref = new Scanner(System.in);
+
+		System.out.println("Enter the number");
+
+		int num = ref.nextInt();
+
+		int count = 0;
+
+		for (int i = 2; i < num; i++) {
+
+			if (num % i == 0) {
+
+				count++;
+
+			}	
+
+		}
+
+		if (count == 0) {
+
+			System.out.println("The entered number is a prime num" 
+				+" "+ num);
+
+		} else {
+
+			System.out.println("The entered number is not a 
+				prime num" +" "+ num);
+
+		  }
+
+		ref.close();
+	}
+
+
+}
+
+
+
+
+<------------------------------------>
+
+2 done	WAP to Demonstrate Type Casting.
+
+
+<------------------------------------>
+
+package com.mock;
+
+public interface Face {
+
+	void demo();
+}
+
+package com.mock;
+
+public class FaceTest implements Face {
+
+	public void demo() {
+		System.out.println("Implementation of Interface 
+			Method Demo");
+	}	
+}
+
+package com.mock;
+
+public class FaceTestImp {
+
+	public static void main(String[] args) {
+		
+		int a = 10;
+		double b =a;//implicit type
+		Face ref =new FaceTest();
+		FaceTest r =(FaceTest) ref;
+		r.demo();
+	}
+}
+
+<-------------------------------------------------------->
+
+3	WAP to find the number of arguments provide at runtime.
+
+<--------------------------------------------------------->
+
+package com.demo;
+
+public class RunTimeInPut {
+
+	public static void main(String[] args) {
+
+		System.out.println("Arguments passed at runtime. "
+			+ args.length  + " here ");
+	          
+	        for(int i = 0; i < args.length; i++) {
+	            System.out.println("Argument " + i + " = " 
+	                               + args[i]);
+	        }
+	}
+}
+
+<---------------------------------------->
+
+4.   WAP to Test the Prime number.
+
+<----------------------------------------->
+
+package com.demo.numbers;
+
+import java.util.Scanner;
+
+public class PrimeNumber {
+
+	public static void main(String[] args) {
+	Scanner ref=new Scanner (System.in);
+	System.out.println("Enter the number");
+	int num=ref.nextInt();
+	boolean flag=false;
+	for (int i = 2; i <=num/2; i++) {
+		if(num%i==0) {
+			flag=true;
+			break;
+		}
+	}
+	String str=!flag?"prime":"Not a prime";
+	System.out.println(str);
+	}
+
+}
+
+<---------------------------------------------->
+
+5	WAP to calculate the Simple Interest and Input 
+	by the user.
+
+<----------------------------------------------->
+
+package com.demo;
+
+import java.util.Scanner;
+
+public class SimpleIntrest {
+	
+	static void simpleIntrest(double p, int n, double r ) {
+		
+		double simpleintrest = (p*n*r)/100;
+		System.out.println("Simple Intrest of amount "+p
+				+" at rate of intrest("+r+") is "
+					+simpleintrest);	
+	}
+
+	public static void main(String[] args) {
+
+		Scanner ref = new Scanner(System.in);
+		System.out.println("enter principle Amount : ");
+		double principleAmount = ref.nextDouble();
+		System.out.println("enter number of years : ");
+		int numberofyears = ref.nextInt();
+		System.out.println("enter rate of intrest : ");
+		double rateofintrest = ref.nextDouble();
+		simpleIntrest(principleAmount, numberofyears
+			,rateofintrest);
+		
+	}
+}
+
+<---------------------------------->
+
+7 WAP to find G.C.D of the number.
+
+<------------------------------------------->
+
+package com.demo.number
+
+public class GreatestCommonDivisor {
+
+
+
+	public static void main(String[] args) {
+
+	    int n1 = 81, n2 = 153;
+
+	    int gcd = 1;
+
+	    for (int i = 1; i <= n1 && i <= n2; ++i) {
+
+	      	if (n1 % i == 0 && n2 % i == 0)
+
+	      	     gcd = i;
+
+	    }
+	    
+	    System.out.println("GCD of " + n1 +" and " 
+		+ n2 + " is " + gcd);
+
+	  }
+	
+}
+
+<------------------------------------------------>
+
+8	WAP to design a class account using the inheritance 
+	and static that show all function of bank 
+	(withdrawal, deposit).
+
+<-------------------------------------------------->
+
+package com.demo;
+
+public class Bank {
+
+private Long balance;
+	
+	public Bank() {
+		this.balance = 15000l;
+	}
+	
+	public Long getBalance() {
+		return this.balance;
+	}
+	
+	public void withDraw(long withDrawAmount) {
+		if (withDrawAmount <= balance) {
+			this.balance -= withDrawAmount;
+			System.out.println("With Draw Successfull");
+			System.out.println("Current Balance : " 
+				+ getBalance());
+		} else {
+			System.out.println("Insufficient Amount");
+		}
+	}
+
+	public void deposite(long depositeAmount) {
+		if (depositeAmount >= 100) {
+			this.balance += depositeAmount;
+			System.out.println("Deposite Successfull");
+			System.out.println("Current Balance : " 
+				+ getBalance());
+		} else {
+			System.out.println("Amount Should be 
+				more than 100");
+		}
+	}
+}
+
+
+package com.demo;
+
+import java.util.Scanner;
+
+public class BankTest extends Bank {
+
+	public static void main(String[] args) {
+
+		System.out.println(" Welcome to Union Bank Of India ");
+		Scanner obj = new Scanner(System.in);
+		System.out.println("enter amount to be deposit : ");
+		long depositamt = obj.nextLong();
+		System.out.println("enter amount to be withdrawn : ");
+		long withdrawamt = obj.nextLong();
+		
+		BankTest ref = new BankTest();
+	
+		System.out.println(ref.getBalance());
+		ref.deposite(depositamt);
+		ref.withDraw(withdrawamt);
+	}
+}
+
+<--------------------------------------------------------->
+
+9	WAP to find the factorial of a given number using Recursion.
+
+<---------------------------------------------------------------1>
+
+public class factorial {
+
+	public static void main(String args[]){
+  
+		  int i,fact=1;
+  
+		  int number=8;
+   
+		  for(i=1;i<=number;i++){
+    
+		      fact=fact*i;
+    
+		  }    
+		  
+		  System.out.println("Factorial of "
+			+number+" is: "+fact);
+ 
+	 }
+}
+
+<-------------------------------------------------->
+10  WAP to design a class using abstract Methods and Classes
+
+<------------------------------------------------------>
+
+package com.abstractclass.methods;
+
+public abstract class AbstractMethods {
+
+	abstract void inPut();
+	abstract void print();
+	
+}
+
+package com.abstractclass.methods;
+
+public class ImpOfAbMethods extends AbstractMethods {
+
+	@Override
+	void inPut() {
+		
+		System.out.println("inPut method implementation 
+			of Abstract class");
+	}
+
+	@Override
+	void print() {
+		
+		System.out.println("print method implementation 
+			of Abstract class");
+	}
+	
+}
+
+
+package com.abstractclass.methods;
+
+public class AbstractMethodsTest {
+
+	public static void main(String[] args) {
+
+		ImpOfAbMethods ref = new ImpOfAbMethods();
+		ref.inPut();
+		ref.print();
+	}
+}
+
+<------------------------------------------------------->
+11.  Write a Program to design a String class that perform 
+String Method (Equal, Reverse the string, change case) ?
+
+
+<------------------------------------------------------->
+
+package com.inbuilt.stringclass.methods;
+
+
+
+public class StringClass {
+
+
+	public static void main(String[] args) {
+
+
+		String def="Test Yantra";
+
+		String toi= "Jenito Paul";
+	
+	for (int i = toi.length()-1; i >=0; i--) {
+
+			System.out.print(toi.charAt(i));
+
+		}
+
+		System.out.println(" ");
+
+		for (int j = def.length()-1; j >=0; j--) {
+
+			System.out.print(def.charAt(j));
+
+		}
+
+		System.out.println(" ");
+
+		System.out.println(def.length());
+
+
+		System.out.println(def.charAt(3));
+
+
+		System.out.println(def.concat(" Software
+			 Testing Company"));
+
+
+		System.out.println(def.endsWith("ar"));
+
+
+		System.out.println(def.substring(4));
+
+
+		System.out.println(def.toUpperCase());
+
+
+		System.out.println(def.toLowerCase());
+
+
+		System.out.println(def.equals(toi));
+
+
+		System.out.println(toi.endsWith("abc"));
+
+
+		System.out.println(def.contains("tra"));
+
+
+		System.out.println(toi.hashCode());
+
+
+		System.out.println(def.hashCode());
+
+
+		System.out.println(def.toString());
+
+
+		System.out.println(toi.toString());
+
+
+		System.out.println(SstringClass.class);
+
+
+		System.out.println(toi.replace("Jenito Paul",
+			 "Jaul"));
+
+
+		System.out.println(def.replaceAll("Test Yantra",
+			 "Testyantra"));
+
+
+	
+}
+
+
+
+}
+
+
+<--------------------------------------------------->
+
+12  WAP to handle the Exception using try and multiple catch block.
+
+<----------------------------------------------------->
+
+package com.assignment.trycatch;
+
+
+
+public class mulitiplecatchblock {
+
+
+	public static void main(String[] args) {
+  
+        
+        try{
+    
+             	int a[]=new int[4];
+           
+             System.out.println(a[5]);
+  
+            	  } catch(ArithmeticException e) {
+	  
+                System.out.println("Arithmetic 
+				Exception occurs");
+  
+                   } 
+   
+               catch(ArrayIndexOutOfBoundsException e) {
+  
+                	System.out.println("ArrayIndexOutOfBounds 
+				Exception occurs");
+  
+                }
+	          catch(Exception e) {
+	  
+                System.out.println("Parent Exception occurs");
+  
+                }
+
+	}
+
+}
+
+<------------------------------------------>
+
+13. WAP that Implement the Nested try Statements.
+
+<--------------------------------------------->
+
+package com.assignment.nestedtry;
+
+public class nestedtry {
+	public static void main(String args[]){    
+		  try{    
+		    try{    
+		     System.out.println("going to divide by 0");    
+		     int b =10/0;    
+		   }   
+		    catch(ArithmeticException e)  
+		    {  
+		      System.out.println(e);  
+		    }    
+		
+		    try{    
+		    int a[]=new int[4];    
+		 
+		     a[4]=8;    
+		     }  
+		  
+		    catch(ArrayIndexOutOfBoundsException e)  
+		    {  
+		       System.out.println(e);  
+		    }    
+		  
+		      
+		    System.out.println("other statement");    
+		  }   
+		  catch(Exception e)  
+		  {  
+		    System.out.println("handled the exception 
+			(outer catch)");  
+		  }    
+		    
+		  System.out.println("normal flow..");    
+		 }    	
+}
+<---------------------------------------------------------->
+
+14 & 15    WAP to Create a package that access the member of e
+			xternal class as well as same package.	
+	   WAP that import the user define package and access 
+			the Member variable of classes that 
+			Contained by Package.
+
+<---------------------------------------------------------->
+package com.first.userpackage;
+
+class UserDefined { 
+	
+	protected static void add(int a,int b) {
+		System.out.println("Addition of "+a+" and "+b+" = "+(a+b));
+	}
+	protected static void sub(int a,int b) {
+		System.out.println("Subtraction of "+a+" and "+b+" = "+(a-b));
+	}
+	protected static void mul(int a,int b) {
+		System.out.println("Multiplication of "+a+" and "+b+" = "+(a*b));
+	}
+	protected static void div(int a,int b) {
+		System.out.println("Division of "+a+" and "+b+" = "+(a/b));
+	}
+	
+	
+}
+
+package com.second.userpackage;
+
+import com.first.userpackage.UserDefi+ned;
+
+class UserDefinedTest {
+	
+	public static void main(String [] args) {
+		
+		UserDefined.add(5,10);
+		UserDefined.sub(5,10);
+		UserDefined.mul(5,10);
+		UserDefined.div(5,10);		
+	}
+} 
+<------------------------------------------------------->
+
+16  WAP that show the partial implementation of Interface.
+
+<------------------------------------------------------->
+
+package com.practice.numberpgms;
+
+
+public interface Collections {
+
+	public abstract void set();
+
+	
+public abstract void list();
+
+	
+public abstract void queue();
+
+
+}
+
+
+
+
+
+package com.practice.numberpgms;
+
+
+public abstract class Framework implements Collections {
+
+
+	public void set() {
+
+		System.out.println("Framework class Set");
+
+	}
+
+
+	public void list() {
+
+		System.out.println("Framework class list");
+
+	}
+
+
+	public int sortedSet(int a, int b) {
+
+
+		return a + b;
+
+
+	}
+
+
+	public double sortedSet1(int a, int b) {
+
+
+		return a + b;
+
+	}
+
+}
+
+
+
+
+package com.practice.numberpgms;
+
+
+public class EndUser extends Framework{
+
+
+	public static void main(String[] args) {
+
+		
+Framework collect = new EndUser();
+
+		
+collect.list();
+
+		collect.queue();
+
+		collect.set();
+
+		collect.sortedSet(10,20);
+
+		collect.sortedSet1(1000, 200);
+
+	}
+
+	
+}
+
+<----------------------------------------------------->
+
+17	WAP to Handle the user defined Exception using 
+	throw keyword.
+
+<---------------------------------------------------------------->
+package com.exception.assignment.throwkeyword;
+
+import java.util.Scanner;
+
+import com.exception.assignment.throwkeyword.custom.IvalidNumber;
+
+public class ThrowKeyword {
+
+	public void name(int number) throws IvalidNumber {
+		
+	if(number%2==0){  
+	        System.out.println("even number");  
+	    }else{  
+	        throw new IvalidNumber("odd number"); 
+	    }
+	}
+	
+}
+
+package com.exception.assignment.throwkeyword;
+
+import java.util.Scanner;
+
+public class ThrowKeywordTest {
+
+	public static void main(String[] args) {
+
+		ThrowKeyword obj = new ThrowKeyword();
+		Scanner ref = new Scanner(System.in);
+		try {
+			System.out.println("enter a number");
+			int a = ref.nextInt();
+			obj.name(a);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		  }
+	}
+}
+
+package com.exception.assignment.throwkeyword.custom;
+
+public class IvalidNumber extends Exception {
+	public IvalidNumber(String msg) {
+		super(msg);
+	}
+}
+
+<----------------end---------------------------->
