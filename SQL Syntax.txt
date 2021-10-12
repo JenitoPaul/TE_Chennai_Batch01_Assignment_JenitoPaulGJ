@@ -1,0 +1,32 @@
+MySQL--->Commands
+
+1.To Display the database-->show databases;
+2.To Create Database-------->create database databasename;
+3.To Establish Connection--->use DBname;
+4.To Find the tables present in DB ---->show tables;
+5.To Create Table---->
+	create table tablename(
+		attributename1(column) datatype constraints,
+		attributename2(column) datatype constraints
+	);
+
+    -> create table interns(
+    -> name varchar(50) not null,
+    -> id int primary key check(id>0),
+    -> dob date,
+    -> gender varchar(1) not null,
+    -> role varchar(25) not null,
+    -> mobile bigint unique not null check(mobile>0),
+    -> salary double check(salary>=0)
+    -> );
+6.To describe table---->desc tablename;
+7.To insert records in to table--->insert into tablename() values();
+8.To display full tablecontents---->Select * From  tablename;
+9.To add column--->alter table tablename add newcolumnname datatype constraints;
+10.to delete column-->alter table tablename delete column columnname;
+11.to change constraints and datatype--->alter table tablename modify columnname datatype (or)(both)constraints;
+12.To rename a columnname--->alter table tablename change oldcolumnname newcolumnname datatype;
+13.To rename table name---->rename table tablename to new table name;
+14.To delete all the records leaving attributes--->truncate table tablename;  	
+15.To delete all the records and attributes(Tables)--->drop table tablename;
+16.To delete DB--->drop database databasename;  
